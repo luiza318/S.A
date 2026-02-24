@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+     font-family: Arial, sans-serif
 }
 .caixa{
     display: grid;
@@ -24,13 +25,93 @@ body{
     background-color: #E8E2D6;
     height: 280px;
     border-radius: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Playpen Sans Thai", cursive;
 }
 .b2{
     background-color: #E8E2D6;
     height: 600px;
     border-radius: 50px;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.b2 h1{
+    margin-bottom: 25px;
     font-family: "Playpen Sans Thai", cursive;
+}
+.b2 input{
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: white;
+    font-size: 15px;
+}
+.link{
+    width: 80%;
+    display: block;
+    margin: 5px 0 15px 0;
+    font-size: 14px;
+    color: #3a3a3a;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+     text-decoration: underline;
+}
+.link:first-of-type{
+    text-align: right;
+}
+.bnt{
+    width: 80%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #6B8E23;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.bnt:hover{
+    background-color: #5a7a1d;
+}
+.bnt-google{
+    width: 80%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #6B8E23;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.bnt-google:hover{
+    background-color: #5a7a1d;
+}
+.link:last-of-type{
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+.link:hover{
+    color: #6B8E23;
 }
 .footer {
     background-color:#E8E2D6;
