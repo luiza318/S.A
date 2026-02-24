@@ -1,0 +1,12 @@
+.menu{
+    background-color: #E8E2D6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10%;
+    margin: 10%;
+}
+.logo{
+    width: 10%;
+    height: 10%;
+}
