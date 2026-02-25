@@ -32,7 +32,6 @@ body{
     font-family: "Playpen Sans Thai", cursive;
     width: 450px;
     margin: 20px;
-    flex-direction: column;
 }
 .b2{
     background-color: #E8E2D6;
@@ -74,17 +73,6 @@ body{
 }
 .link:first-of-type{
     text-align: right;
-}
-input[type="date"]{
-    width: 80%;
-    padding: 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 30px;
-    outline: none;
-    background: white;
-    font-size: 15px;
-    color: #333;
 }
 .bnt{
     width: 80%;
@@ -210,7 +198,7 @@ input[type="date"]{
 
     .b2{
         width: 250px;
-        height: 560px;
-        margin-top: -20px; 
+        height: 500px;
+        margin: 0 auto;  
     }
 }
