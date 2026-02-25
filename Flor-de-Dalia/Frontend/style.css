@@ -60,18 +60,26 @@
 .l-direito a:hover{
     color: #6B8E23;
 }
-/* MENU USUARIO */
+/* ===== MENU USUÁRIO ===== */
 
 .user-menu{
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
+/* Ícone */
 .user-menu i{
     font-size: 30px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Dropdown */
+.user-menu i:hover{
+    color: #6B8E23;
+}
+
+/* ===== DROPDOWN ===== */
 
 .dropdown{
     position: absolute;
@@ -80,28 +88,38 @@
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    padding: 10px 0;
-    width: 140px;
-    display: none;
+    padding: 8px 0;
+    width: 160px;
+
+    display: none;          /* escondido por padrão */
     flex-direction: column;
+
     z-index: 1000;
+    overflow: hidden;
 }
 
+/* Links */
 .dropdown a{
-    padding: 10px 15px;
+    padding: 12px 15px;
     text-decoration: none;
     color: black;
     display: block;
-    transition: 0.3s;
+    font-size: 15px;
+    transition: 0.25s;
 }
 
+/* Hover */
 .dropdown a:hover{
-    background: #f2f2f2;
+    background: #f5f5f5;
     color: #6B8E23;
 }
 
-/* Classe ativa */
+/* Linha separadora */
+.dropdown a:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
 
+/* Classe ativa (quando abre) */
 .dropdown.show{
     display: flex;
 }
