@@ -56,6 +56,7 @@ slider.addEventListener("touchstart", (e) => {
 
 slider.addEventListener("touchend", (e) => {
   let endX = e.changedTouches[0].clientX;
+
   if (startX - endX > 50) {
     showSlide(index + 1);
   } else if (endX - startX > 50) {
@@ -65,3 +66,22 @@ slider.addEventListener("touchend", (e) => {
 
 showSlide(index);
 startAutoPlay();
+
+const buttons = document.querySelectorAll(".btn-toggle");
+
+buttons.forEach(button => {
+  button.addEventListener("click", function () {
+
+    const card = this.closest(".card");
+    const extraText = card.querySelector(".extra-text");
+
+    if (extraText.style.maxHeight) {
+      extraText.style.maxHeight = null;
+      this.textContent = "Ler mais";
+    } else {
+      extraText.style.maxHeight = extraText.scrollHeight + "px";
+      this.textContent = "Ler menos";
+    }
+
+  });
+});
