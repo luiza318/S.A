@@ -2,19 +2,27 @@
     padding: 0;
     margin: 0;
     font-family: "Inter", sans-serif;
-    font-weight: 300;
     box-sizing: border-box;
 }
 
-/* HEADER */
+body{
+    background-color: #484933; 
+    font-weight: 300;
+}
+h1, h2, h3{
+    font-weight: 600;
+}
 
+/* HEADER */
+header{
+    padding: 15px;
+}
 .menu{
     background-color: #E8E2D6;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    margin: 15px;
     border-radius: 50px;
 }
 .logo{
@@ -24,10 +32,12 @@
     cursor: pointer;
 }
 .barra-de-pesquisa{
+    flex: 1;
+    max-width: 500px;
     position: relative;
 }
 .barra-de-pesquisa input{
-    width: 500px;
+    width: 100%;
     height: 40px;
     border-radius: 20px;
     padding-left: 35px;
@@ -59,6 +69,28 @@
 }
 .l-direito a:hover{
     color: #6B8E23;
+}
+
+@media (max-width: 900px){
+
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .barra-de-pesquisa{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .l-direito{
+        justify-content: center;
+        width: 100%;
+    }
 }
 /* ===== MENU USUÁRIO ===== */
 
@@ -122,4 +154,180 @@
 /* Classe ativa (quando abre) */
 .dropdown.show{
     display: flex;
+}
+
+.banner-inicial{
+    width: 100%;
+    padding: 40px 80px; 
+}
+
+.banner-inicial img {
+    width: 100%;
+    height: auto; 
+    border-radius: 20px; 
+    display: block;
+}
+
+@media (max-width: 768px){
+    .banner-inicial{
+        padding: 20px;
+    }
+}
+
+/*MAIN*/
+
+/* AREA PRODUTOS */
+.secao-produtos {
+    background-color: #E8E3D9; /* bege do fundo */
+    padding: 60px 0;
+}
+
+.titulo-produtos {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #4B5320; /* verde oliva */
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+.area-p{
+    padding: 70px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    
+}
+
+/* CARROSSEL */
+.carrosel-p{
+    display: flex;
+    padding: 10px 0;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.carrosel-p::-webkit-scrollbar{
+    display: none;
+}
+
+/* CARD PRODUTO */
+.produto{
+    min-width: 230px;
+    background-color: #484933;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    gap: 10px;
+}
+
+.produto:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* IMAGEM */
+
+.card-img{
+    width: 100%;
+    aspect-ratio: 1 / 1; /* quadrado */
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* INFO */
+
+.card-info{
+    margin-bottom: 15px;
+}
+
+.produto-nome{
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.produto-descricao{
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.produto-preco{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* BOTÃO */
+
+.btn-comprar{
+    background-color: #E8E2D6;
+    color: #484933;
+    border: none;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-comprar:hover{
+    background-color: #6B8E23;
+    color: white;
+}
+
+/* SETAS */
+
+.seta-esquerda,
+.seta-direita{
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: #484933;
+    transition: 0.3s;
+}
+
+.seta-esquerda:hover,
+.seta-direita:hover{
+    transform: scale(1.1);
+}
+@media (max-width: 900px){
+
+    .area-p{
+        padding: 40px 20px;
+    }
+
+    .produto{
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 600px){
+
+    .seta-esquerda,
+    .seta-direita{
+        display: none;
+    }
+
+    .area-p{
+        padding: 30px 15px;
+    }
+
+    .produto{
+        min-width: 180px;
+    }
 }
