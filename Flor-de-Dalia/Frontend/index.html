@@ -27,9 +27,7 @@
                 <h3>Blog</h3>
             </a>
 
-            <a href="">
-                <i class="bi bi-basket"></i>
-            </a>
+                <i class="bi bi-basket" id="abrirCarrinho"></i>
 
             <div class="user-menu">
                 <i class="bi bi-person-fill" id="userIcon"></i>
@@ -43,6 +41,33 @@
         </section>
     </div>
   </header>
+
+    <section id="carrinho">
+
+        <div class="carrinho-topo">
+            <h2>CARRINHO <span class="qtd">0</span></h2>
+            <button id="fecharCarrinho">✕</button>
+        </div>
+
+        <div class="carrinho-progresso">
+            <p>Adicione R$99,99 para <strong>frete grátis</strong></p>
+
+            <div class="barra">
+                <div class="barra-preenchida"></div>
+            </div>
+        </div>
+
+        <!-- CARRINHO VAZIO -->
+        <div class="carrinho-vazio">
+            <p>Seu carrinho está vazio</p>
+
+        <button class="btn-continuar" id="continuarComprando">
+            Continuar comprando
+        </button>
+        </div>
+
+    </section>
+    
   <main>
     <section class="banner-inicial">
          <img src="imagens/banner-inicial.png" alt="banner decorativo">

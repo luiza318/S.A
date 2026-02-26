@@ -1,10 +1,9 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
-
 body{
     background-color: #484933; 
     font-weight: 300;
@@ -330,4 +329,143 @@ header{
     .produto{
         min-width: 180px;
     }
+}
+
+/* Carrinho */
+
+#carrinho {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    height: 100vh;
+    background: #E8E2D6;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+#carrinho.ativo {
+    right: 0;
+}
+/*TOPO  */
+
+.carrinho-topo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.carrinho-topo h2{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.qtd{
+    background: white;
+    color: #6B8E23;
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-left: 8px;
+}
+#fecharCarrinho{
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    border: none;
+    background: none;
+    font-size: 23px;
+    cursor: pointer;
+}
+.carrinho-progresso{
+    padding: 0 20px 20px;
+}
+.carrinho-progresso p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Barra */
+
+.barra{
+    width: 100%;
+    height: 8px;
+    background: #dcdcdc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.barra-preenchida{
+    width: 5%;
+    height: 100%;
+    background: #4B5320;
+    border-radius: 20px;
+}
+
+/*  ESTADO VAZIO */
+
+.carrinho-vazio{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+.carrinho-vazio p{
+    font-size: 22px;
+    color: #555;
+}
+
+/* BOTÃO */
+
+.btn-continuar{
+    background: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-continuar:hover{
+    background: #6B8E23;
+}
+@media (max-width: 768px){
+
+    #carrinho h2{
+        font-size: 15px;
+    }
+    .qtd{
+    padding: 3px 6px;
+    font-size: 14px;
+    margin-left: 8px;
+    }
+    #fecharCarrinho{
+    right: 8px;
+    top: 15px;
+    border: none;
+    font-size: 22px;
+    }
+    .carrinho-vazio p{
+        font-size: 15px;
+    }
+    .btn-continuar{
+        padding: 10px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    #carrinho{
+        width: 50vw;   
+        right: -50vw;  
+    }
+    #carrinho.ativo{
+        right: 0;
+    }
+
 }
