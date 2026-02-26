@@ -1,3 +1,5 @@
+//Carrossel//
+
 const slider = document.querySelector("#slider");
 const slides = document.querySelector(".slides");
 const slide = document.querySelectorAll(".slide");
@@ -66,6 +68,8 @@ slider.addEventListener("touchend", (e) => {
 
 showSlide(index);
 startAutoPlay();
+
+//Cards//
 
 const buttons = document.querySelectorAll(".btn-toggle");
 
