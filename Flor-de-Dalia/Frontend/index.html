@@ -13,33 +13,190 @@
 <body>
   <header>
     <div class="menu">
-            <img class="logo" src="imagens/logo-st.png" alt="">
+        <a href="index.html">
+            <img class="logo" src="imagens/logo-st.png" alt="Logo Raiz de Dália">
+        </a>
 
-            <div class="barra-de-pesquisa">
-                <i class="bi bi-search"></i>
-                <input type="text" placeholder="Digite o que você procura">
-            </div>
+        <div class="barra-de-pesquisa">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Digite o que você procura">
+        </div>
        
         <section class="l-direito">
             <a href="">
                 <h3>Blog</h3>
             </a>
+
             <a href="">
                 <i class="bi bi-basket"></i>
             </a>
-            <a href="">
-                <i class="bi bi-person-fill"></i>
-            </a>
+
+            <div class="user-menu">
+                <i class="bi bi-person-fill" id="userIcon"></i>
+
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="perfil.html">Perfil</a>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastro</a>
+                </div>
+            </div>
         </section>
-        
-      
     </div>
   </header>
   <main>
+    <section class="banner-inicial">
+         <img src="imagens/banner-inicial.png" alt="banner decorativo">
+    </section>
 
+    <section class="secao-produtos">
+
+        <h2 class="titulo-produtos">Produtos</h2>
+
+        <div class="area-p">
+            <button class="seta-esquerda" onclick="scrollProdutos(-1)"> 
+                <i class="bi bi-arrow-left-circle"></i>
+            </button>
+
+            <div class="carrosel-p" id="carrosel-p">
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-sabonete.jpg" alt="Sabonete natural">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Sabonete Natural</h3>
+                        <p class="produto-descricao">Feito com óleos vegetais e essência natural calmante.</p>
+                        <p class="produto-preco">R$ 24,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-vela-aromática.webp" alt="Vela Aromática de Soja">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Vela Aromática de Soja</h3>
+                        <p class="produto-descricao">Cera vegetal biodegradável com aroma suave de capim-limão.</p>
+                        <p class="produto-preco">R$ 39,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-shampoo-solido.jpg" alt="Shampoo Sólido Natural">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Shampoo Sólido Natural</h3>
+                        <p class="produto-descricao">Sem plástico, sem sulfato e vegano.</p>
+                        <p class="produto-preco">R$ 32,90</p>
+                    </div>
+
+                   <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-EscovadeDentedeBambu.webp" alt="Escova de Dente de Bambu">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Escova de Dente de Bambu</h3>
+                        <p class="produto-descricao">Cabo biodegradável e cerdas macias recicláveis.</p>
+                        <p class="produto-preco">R$ 18,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-EcobagAlgodãoOrgânico.jpg" alt="Ecobag Algodão Orgânico">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Ecobag Algodão Orgânico</h3>
+                        <p class="produto-descricao">Reutilizável, resistente e perfeita para o dia a dia.</p>
+                        <p class="produto-preco">R$ 29,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-KitCanudosdeInox.jpg" alt="Kit Canudos de Inox">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Kit Canudos de Inox</h3>
+                        <p class="produto-descricao">4 canudos reutilizáveis + escovinha de limpeza.</p>
+                        <p class="produto-preco">R$ 27,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-EsponjaVegetalNatural.webp" alt="Esponja Vegetal Natural">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Esponja Vegetal Natural</h3>
+                        <p class="produto-descricao">Alternativa ecológica para banho e limpeza doméstica.</p>
+                        <p class="produto-preco">R$ 14,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+
+                <div class="produto"> 
+                    <div class="card-img">
+                        <img src="imagens/p-HidratanteCorporalNatural.jpg" alt="Hidratante Corporal Natural">
+                    </div>
+
+                    <div class="card-info">
+                        <h3 class="produto-nome">Hidratante Corporal Natural</h3>
+                        <p class="produto-descricao">Fórmula vegetal com manteiga de karité.</p>
+                        <p class="produto-preco">R$ 44,90</p>
+                    </div>
+
+                    <button class="btn-comprar">
+                        Comprar <i class="bi bi-basket"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button class="seta-direita" onclick="scrollProdutos(1)">
+                <i class="bi bi-arrow-right-circle"></i>
+            </button>
+        </div>
+    </section>
   </main>
   <footer>
 
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
