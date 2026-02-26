@@ -160,13 +160,18 @@ header{
     padding: 40px 80px; 
 }
 
-.banner-inicial img {
+.img-comp {
     width: 100%;
     height: auto; 
     border-radius: 20px; 
     display: block;
 }
-
+.img-cel{
+    width: 100%;
+    height: auto; 
+    border-radius: 20px; 
+    display: none;
+}
 @media (max-width: 768px){
     .banner-inicial{
         padding: 20px;
@@ -195,7 +200,6 @@ header{
     align-items: center;
     justify-content: center;
     gap: 25px;
-    
 }
 
 /* CARROSSEL */
@@ -316,7 +320,12 @@ header{
 }
 
 @media (max-width: 600px){
-
+    .img-comp{
+        display: none;
+    }
+    .img-cel{
+        display: block;
+    }
     .seta-esquerda,
     .seta-direita{
         display: none;
@@ -329,6 +338,54 @@ header{
     .produto{
         min-width: 180px;
     }
+}
+
+/* CATEGORIAS */
+.secao-categorias{
+    padding: 30px;
+}
+.titulo-categoria {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #E8E2D6;
+    padding: 10px;
+}
+.categorias {
+    transition: 0.3s ease;
+}
+
+.categorias:hover {
+    transform: scale(1.05);
+}
+.categorias img{
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 9px;
+}
+.area-c{
+    padding: 40px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+.area-c a{
+    text-decoration: none;
+    text-align: center;
+    color: #E8E2D6;
+}
+.footer {
+    background-color:#E8E2D6;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* Carrinho */

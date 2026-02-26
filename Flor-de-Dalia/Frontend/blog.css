@@ -9,12 +9,13 @@ body {
 .slider {
   position: relative;
   width: 100%;
-  height: 65vh; /* altura tipo banner */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
 .slides {
   display: flex;
+  height: 100%; /* 👈 ESSENCIAL */
   transition: transform 0.6s ease-in-out;
 }
 
@@ -26,7 +27,7 @@ body {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 ESSENCIAL */
+  object-fit: cover;
   display: block;
 }
 
@@ -35,28 +36,54 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  cursor: pointer;
+  
+  width: 65px;
+  height: 65px;
+
   border-radius: 50%;
-  transition: 0.3s;
+  border: 2px solid rgba(255,255,255,0.6);
+
+  background: rgba(46, 125, 50, 0.25); /* verde translúcido */
+  backdrop-filter: blur(8px); /* efeito vidro */
+
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.4s ease;
+  z-index: 20;
 }
 
 .prev:hover, .next:hover {
-  background: rgba(0,0,0,0.7);
+  background: rgba(46, 125, 50, 0.8);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 0 25px rgba(46, 125, 50, 0.6);
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
+.prev { left: 30px; }
+.next { right: 30px; }
+
+@media (max-width: 768px) {
+
+  .prev, .next {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+}
 
 /* Bolinhas */
 .dots {
   position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
 }
 
 .dot {
@@ -87,6 +114,14 @@ body {
   gap: 30px;
 
   align-items: start; /* 👈 ADICIONE ISSO */
+}
+
+@media (max-width: 768px) {
+
+  .cards {
+    grid-template-columns: 1fr; /* 👈 1 card por linha */
+  }
+
 }
 
 .card {
@@ -148,8 +183,27 @@ body {
   background: #1b5e20;
 }
 
+
+
 @media (max-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr;
+
+  .slider {
+    height: 40vh; /* menor no mobile */
   }
+
+  .prev, .next {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .dots {
+    bottom: 10px; /* aproxima as bolinhas */
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+  }
+
 }
