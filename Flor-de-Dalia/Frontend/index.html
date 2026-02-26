@@ -23,13 +23,11 @@
         </div>
        
         <section class="l-direito">
-            <a href="">
+            <a href="blog.html">
                 <h3>Blog</h3>
             </a>
 
-            <a href="">
-                <i class="bi bi-basket"></i>
-            </a>
+                <i class="bi bi-basket" id="abrirCarrinho"></i>
 
             <div class="user-menu">
                 <i class="bi bi-person-fill" id="userIcon"></i>
@@ -43,15 +41,41 @@
         </section>
     </div>
   </header>
+
+    <section id="carrinho">
+
+        <div class="carrinho-topo">
+            <h2>CARRINHO <span class="qtd">0</span></h2>
+            <button id="fecharCarrinho">✕</button>
+        </div>
+
+        <div class="carrinho-progresso">
+            <p>Adicione R$99,99 para <strong>frete grátis</strong></p>
+
+            <div class="barra">
+                <div class="barra-preenchida"></div>
+            </div>
+        </div>
+
+        <!-- CARRINHO VAZIO -->
+        <div class="carrinho-vazio">
+            <p>Seu carrinho está vazio</p>
+
+        <button class="btn-continuar" id="continuarComprando">
+            Continuar comprando
+        </button>
+        </div>
+
+    </section>
+    
   <main>
     <section class="banner-inicial">
-         <img src="imagens/banner-inicial.png" alt="banner decorativo">
+        <img class="img-comp" src="imagens/banner-inicial.png" alt="banner decorativo">
+        <img class="img-cel" src="imagens/banner-inicio.png" alt="banner decorativo">
     </section>
 
     <section class="secao-produtos">
-
         <h2 class="titulo-produtos">Produtos</h2>
-
         <div class="area-p">
             <button class="seta-esquerda" onclick="scrollProdutos(-1)"> 
                 <i class="bi bi-arrow-left-circle"></i>
@@ -192,9 +216,38 @@
             </button>
         </div>
     </section>
+    <div class="secao-categorias">
+            <h2 class="titulo-categoria">Categorias</h2>
+            <div class="area-c">
+                <div class="categorias">
+                    <a href="">
+                        <img src="imagens/c-bucha-vegetal.webp" alt="">
+                        <h3>Autocuidado</h3>
+                    </a>
+                </div>
+                <div class="categorias">
+                    <a href="">
+                        <img src="imagens/c-touca-pano-pote.webp" alt="">
+                        <h3>Cozinha</h3>
+                    </a>
+                </div>
+                <div class="categorias">
+                    <a href="">
+                        <img src="imagens/c-ecobag.webp" alt="">
+                        <h3>Presentes</h3>
+                    </a>
+                </div>
+                <div class="categorias">
+                    <a href="">
+                        <img src="imagens/c-oferta.webp" alt="">
+                        <h3>Ofertas</h3>
+                    </a>
+                </div>
+            </div>
+    </div>
   </main>
-  <footer>
-
+  <footer class="footer">
+        <p>© 2026 Raiz de Dália. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
