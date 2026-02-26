@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Raiz de Dália</title>
+
+  <!-- Fonte mais próxima do layout -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/150?img=32">
+      <h2>Laura griss</h2>
+      <div class="badge">✔ Membro Consciente</div>
+    </div>
+
+    <ul class="menu">
+      <li class="active">👤 Dados Pessoais</li>
+      <li>🌿 Produtos Favoritos</li>
+      <li>📦 Meus Pedidos</li>
+      <li>💳 Pagamentos</li>
+      <li>📍 Endereços</li>
+      <li>🚪 Sair</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="header">
+      <h1>Raiz de Dália</h1>
+    </div>
+
+    <div class="card">
+      <h3>Dados Pessoais</h3>
+
+      <div class="dados-grid">
+        <div class="campo">
+          <span>Nome Completo</span>
+          <p>Laura griss</p>
+        </div>
+
+        <div class="campo">
+          <span>E-mail</span>
+          <p>laurag@email.com</p>
+        </div>
+
+        <div class="campo">
+          <span>Telefone</span>
+          <p>(51) 99999-9999</p>
+        </div>
+      </div>
+
+      <br>
+      <button class="btn">Editar informações</button>
+    </div>
+
+    <div class="card">
+      <h3>Produtos Favoritos</h3>
+      <div class="products">
+
+        <div class="product">
+          <img src="shampoo-solido.png">
+          <h4>Shampoo Sólido Natural</h4>
+          <div class="tag">Vegano</div>
+          <br>
+          <button class="btn">Ver produto</button>
+        </div>
+
+        <div class="product">
+          <img src="sabonete-vegano-lavana.webp">
+          <h4>Sabonete Vegano</h4>
+          <div class="tag">Vegano</div>
+          <br>
+          <button class="btn">Ver produto</button>
+        </div>
+
+        <div class="product">
+          <img src="oleo-corp.webp">
+          <h4>Óleo Corporal</h4>
+          <div class="tag">Orgânico</div>
+          <br>
+          <button class="btn">Ver produto</button>
+        </div>
+
+        <div class="product">
+          <img src="Cha-beneficios-tea-compressed.webp">
+          <h4>Chá Detox</h4>
+          <div class="tag">Orgânico</div>
+          <br>
+          <button class="btn">Ver produto</button>
+        </div>
+
+      </div>
+
+      <br>
+      
+    </div>
+
+    <div class="flex">
+
+      <div class="card" style="flex:2;">
+        <h3>Últimos Pedidos</h3>
+        <table class="table">
+          <tr>
+            <th>Pedido</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Valor</th>
+          </tr>
+          <tr>
+            <td>#4589</td>
+            <td>12/02/2026</td>
+            <td class="status sent">Enviado</td>
+            <td>R$ 89,90</td>
+          </tr>
+          <tr>
+            <td>#4521</td>
+            <td>02/02/2026</td>
+            <td class="status done">Entregue</td>
+            <td>R$ 124,50</td>
+          </tr>
+        </table>
+        <br>
+        <button class="btn">Acompanhar pedido</button>
+      </div>
+
+      <div class="card" style="flex:1;">
+        <h3>Impacto Sustentável</h3>
+        <ul class="impact">
+          <li>🌱 12 embalagens plásticas</li>
+          <li>🌿 3 produtos com químicos agressivos</li>
+          <li>♻ 1kg de resíduos</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+  const items = document.querySelectorAll('.menu li');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
