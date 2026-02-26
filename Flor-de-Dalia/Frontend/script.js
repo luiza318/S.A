@@ -1,3 +1,5 @@
+//perfil
+
 const userIcon = document.getElementById("userIcon");
 const dropdown = document.getElementById("dropdownMenu");
 
@@ -10,20 +12,6 @@ document.addEventListener("click", (e) => {
         dropdown.classList.remove("show");
     }
 });
-
-// ===============================
-// CARROSSEL PRODUTOS
-// ===============================
-
-function scrollProdutos(direcao) {
-    const container = document.getElementById("carrosel-p");
-    const larguraCard = container.querySelector(".produto").offsetWidth;
-
-    container.scrollBy({
-        left: direcao * (larguraCard + 30),
-        behavior: "smooth"
-    });
-}
 
 // ===============================
 // CARRINHO
@@ -74,3 +62,17 @@ continuarComprando.addEventListener("click", () => {
     document.querySelector(".secao-produtos")
         .scrollIntoView({ behavior: "smooth" });
 });
+
+// ===============================
+// CARROSSEL PRODUTOS
+// ===============================
+
+function scrollProdutos(direcao) {
+    const container = document.getElementById("carrosel-p");
+    const larguraCard = container.querySelector(".produto").offsetWidth;
+
+    container.scrollBy({
+        left: direcao * (larguraCard + 30),
+        behavior: "smooth"
+    });
+}
