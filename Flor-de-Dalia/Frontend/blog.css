@@ -11,6 +11,18 @@ body {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 25px;
+  border: solid 2px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 1024px) {
+
+  .slider {
+    max-width: 1600px;   /* deixa mais estreito */
+    margin: 0 auto;      /* centraliza */
+    aspect-ratio: 21 / 9; /* mais baixo */
+  }
+
 }
 
 .slides {
