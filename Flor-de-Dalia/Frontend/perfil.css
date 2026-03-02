@@ -191,12 +191,12 @@ header{
     display: inline-block;
 }
 
-.menu {
+.menu-2 {
     list-style: none;
     margin-top: 20px;
 }
 
-.menu li {
+.menu-2 li {
     padding: 10px;
     border-radius: 6px;
     cursor: pointer;
@@ -206,8 +206,8 @@ header{
     transition: 0.2s;
 }
 
-.menu li:hover,
-.menu li.active {
+.menu-2 li:hover,
+.menu-2 li.active {
     background: #eef5ee;
     color: #484933;
     font-weight: 500;
