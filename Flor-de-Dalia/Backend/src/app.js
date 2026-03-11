@@ -9,16 +9,16 @@ const userRoutes = require("./routes/users.routes");
 
 const { errorHandler} = require("./middlewares/error.middleware");
 
-const app = express
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.length("/health", (req, res) => res.json({ ok:true}));
+app.get("/health", (req, res) => res.json({ ok:true}));
 
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 
-app.use(errorHandler)
+app.use(errorHandler);
 
 module.exports = app;
