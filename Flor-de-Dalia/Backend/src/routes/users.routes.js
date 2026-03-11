@@ -5,4 +5,5 @@ const router = express.Router();
 
 router.get("/me", authRequired, me);
 
+
 module.exports = router;
