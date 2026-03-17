@@ -76,3 +76,17 @@ function scrollProdutos(direcao) {
         behavior: "smooth"
     });
 }
+// tela produtos
+function aumentar() {
+    let qtd = document.getElementById("quantidade");
+    qtd.value = parseInt(qtd.value) + 1;
+}
+
+function diminuir() {
+    let qtd = document.getElementById("quantidade");
+
+    if (qtd.value > 1) {
+        qtd.value = parseInt(qtd.value) - 1;
+    }
+}
+
