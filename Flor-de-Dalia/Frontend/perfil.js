@@ -1,4 +1,8 @@
-//perfil
+document.addEventListener("DOMContentLoaded", () => {
+
+// ===============================
+// DROPDOWN USUÁRIO
+// ===============================
 
 const userIcon = document.getElementById("userIcon");
 const dropdown = document.getElementById("dropdownMenu");
@@ -13,6 +17,21 @@ document.addEventListener("click", (e) => {
     }
 });
 
+
+// ===============================
+// MENU LATERAL
+// ===============================
+
+const items = document.querySelectorAll(".sidebar-menu li");
+
+items.forEach(item => {
+    item.addEventListener("click", () => {
+        items.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+    });
+});
+
+
 // ===============================
 // CARRINHO
 // ===============================
@@ -20,56 +39,30 @@ document.addEventListener("click", (e) => {
 const abrirCarrinho = document.getElementById("abrirCarrinho");
 const carrinho = document.getElementById("carrinho");
 const fecharCarrinho = document.getElementById("fecharCarrinho");
+const continuarComprando = document.getElementById("continuarComprando");
 
-// ABRIR
 abrirCarrinho.addEventListener("click", () => {
     carrinho.classList.add("ativo");
 });
 
-// FECHAR NO X
 fecharCarrinho.addEventListener("click", () => {
     carrinho.classList.remove("ativo");
 });
 
-// FECHAR CLICANDO FORA
 document.addEventListener("click", (e) => {
-    if (
-        !carrinho.contains(e.target) &&
-        !abrirCarrinho.contains(e.target)
-    ) {
+    if (!carrinho.contains(e.target) && !abrirCarrinho.contains(e.target)) {
         carrinho.classList.remove("ativo");
     }
 });
 
-// FECHAR COM ESC
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         carrinho.classList.remove("ativo");
     }
 });
 
-// FECHAR NO COMTINUAR COMPRANDO
-const continuarComprando = document.getElementById("continuarComprando");
 continuarComprando.addEventListener("click", () => {
     carrinho.classList.remove("ativo");
 });
 
-// CLICAR NO CONTINUAR E LEVAR AOS PRODUTOS 
-
-continuarComprando.addEventListener("click", () => {
-    carrinho.classList.remove("ativo");
-
-    document.querySelector(".secao-produtos")
-        .scrollIntoView({ behavior: "smooth" });
-});
-
-
-
-const items = document.querySelectorAll('.menu li');
-
-items.forEach(item => {
-  item.addEventListener('click', () => {
-    items.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-  });
 });

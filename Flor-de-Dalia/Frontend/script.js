@@ -89,3 +89,4 @@ function diminuir() {
         qtd.value = parseInt(qtd.value) - 1;
     }
 }
+

@@ -17,3 +17,13 @@ INSERT INTO categories (name) VALUES
 ('Cozinha'),
 ('Presentes'),
 ('Ofertas');
+CREATE DATABASE IF NOT EXISTS sa_db;
+USE sa_db;
+
+CREATE TABLE users (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(120) NOT NULL,
+ email VARCHAR(190) NOT NULL UNIQUE,
+ password_hash VARCHAR(255) NOT NULL,
+ cpf VARCHAR(14)
+);
