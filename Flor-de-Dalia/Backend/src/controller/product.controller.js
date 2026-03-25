@@ -21,4 +21,13 @@ async function listByCategory(req, res, next) {
     }catch (e) { next(e); }
 }
 
-module.exports = {list, findById, listByCategory};
+async function create(req, res, next) {
+    try{
+        const products = await repo.create();
+        res.status(201).json({ products });
+    }catch (e) { next(e); }
+}
+
+//terminar rotas de put, delete, create
+
+module.exports = {list, findById, listByCategory, create};
