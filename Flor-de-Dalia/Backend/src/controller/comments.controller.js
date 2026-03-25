@@ -1,20 +1,27 @@
-let comments = [];
+const repo = require("../repositories/comments.repo");
+const {hashPassword} = require("../utils/password");
 
-// criar comentario
-exports.create = (req, res) => {
-    const { text } = req.body;
-
-    const newComment = {
-        id: Date.now(),
-        text: text,
-        user: req.user ? req.user.id : "anonimo"
-    };
-
-    comments.push(newComment);
-    res.status(201).json(newComment);
+async function create(req, res, next) {
+    try{
+        const {text} = req.body;
+        const id = await repo.createComments(req.user.id, text);
+        const comment = await repo.findById(id);
+        res.status(201).json(comment);
+    }catch(e) {next(e);}
 }
 
-// listar comentarios
+async function list(req, res, next) {
+    try{
+        const comment = await repo.findAll();;
+        res.json(comment)
+    } catch(e) { next (e); }
+}
+
+module.exports = {create, list}
+
+
+
+/* listar comentarios
 exports.list = (req, res) => {
     res.json(comments);
 };
@@ -38,4 +45,4 @@ exports.update = (req, res) => {
 
     comment.text = text;
     res.json(comment);
-};
+}; */

@@ -9,8 +9,8 @@ router.post("/", authRequired, validateComment, commentsController.create);
 
 router.get("/", commentsController.list);
 
-router.delete("/:id", authRequired, commentsController.delete);
+// router.delete("/:id", authRequired, commentsController.delete);
 
-router.put("/:id", authRequired, validateComment, commentsController.update);
+// router.put("/:id", authRequired, validateComment, commentsController.update);
 
 module.exports = router;
