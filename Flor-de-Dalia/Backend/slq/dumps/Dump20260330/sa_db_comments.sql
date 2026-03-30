@@ -16,32 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `products`
+-- Table structure for table `comments`
 --
 
-DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS `comments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `products` (
-  `product_id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `category_id` int DEFAULT NULL,
+CREATE TABLE `comments` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` bigint NOT NULL,
+  `products_id` int DEFAULT NULL,
+  `text` text NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`product_id`),
-  KEY `category_id` (`category_id`),
-  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `comments`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Garrafa Térmica de Bambu',59.90,1,'2026-03-25 12:50:33'),(2,'Kit Skincare Natural',89.90,1,'2026-03-25 12:50:33'),(3,'Kit Utensílios de Cozinha Sustentável',120.00,2,'2026-03-25 12:50:33'),(4,'Canudos Reutilizáveis Inox',25.50,2,'2026-03-25 12:50:33'),(5,'Caixa Presente Ecológica',75.00,3,'2026-03-25 12:50:33'),(6,'Kit Presente Vegano',99.90,3,'2026-03-25 12:50:33'),(7,'Desconto Garrafa Sustentável',39.90,4,'2026-03-25 12:50:33'),(8,'Kit Promoção Cozinha Verde',69.90,4,'2026-03-25 12:50:33');
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,7,17,'slaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','2026-03-25 13:41:58'),(2,6,20,'oiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii','2026-03-26 12:58:12');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-25 10:00:38
+-- Dump completed on 2026-03-30  9:32:40
