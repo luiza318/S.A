@@ -1,5 +1,4 @@
 const repo = require("../repositories/comments.repo");
-const {hashPassword} = require("../utils/password");
 
 async function create(req, res, next) {
     try{
@@ -12,12 +11,30 @@ async function create(req, res, next) {
 
 async function list(req, res, next) {
     try{
-        const comment = await repo.findAll();;
+        const comment = await repo.findAll();
         res.json(comment)
     } catch(e) { next (e); }
 }
 
-module.exports = {create, list}
+async function listByUser(req, res, next) {
+    try{
+        const { userId } = req.params; 
+        const comments = await repo.findByUserId(userId);
+        res.json(comments);
+    } catch(e) { next (e)}
+}
+
+async function update(req, res, next) {
+    try{
+        const {id} = req.params
+        const {text} = req.body;
+        await repo.commentUpdate(id, text);
+        const comment = await repo.findById(id);
+        res.json(comment)
+    }catch(e) {next (e)}
+}
+
+module.exports = {create, list, listByUser, update}
 
 
 

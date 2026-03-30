@@ -17,5 +17,20 @@ async function findAll() {
     return rows;
 }
 
-module.exports = {createComments, findById, findAll}
+async function findByUserId(userId) {
+    const [rows] = await db.query(
+        "SELECT * FROM comments WHERE user_id = ? ORDER BY id DESC",
+        [userId]
+    );
+    return rows;
+}
+
+async function commentUpdate(id, text) {
+    await db.query(
+        "UPDATE  comments SET text = ? WHERE  id = ?"
+    [id, text]
+    );
+}
+
+module.exports = {createComments, findById, findAll, findByUserId, commentUpdate}
 
