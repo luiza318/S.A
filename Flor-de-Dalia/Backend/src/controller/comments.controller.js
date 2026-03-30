@@ -43,5 +43,13 @@ async function update(req, res, next) {
     }catch(e) {next (e)}
 }
 
+async function remove(req, res, next) {
+    try{
+        const {id} = req.params
+        await repo.deleteComment(id);
+        res.json({message:"Comentário Deletado com Sucesso"});
+    } catch (e) { next (e)}
+}
 
-module.exports = {create, list, listByUser, update, listByProduct}
+
+module.exports = {create, list, listByUser, update, listByProduct, remove}

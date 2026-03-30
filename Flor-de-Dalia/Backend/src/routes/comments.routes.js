@@ -15,6 +15,6 @@ router.get("/products/:productId", commentsController.listByProduct)
 
 router.put("/:id", authRequired, validateComment, commentsController.update);
 
-//router.delete("/:id", authRequired, commentsController.delete);
+router.delete("/:id", authRequired, commentsController.remove);
 
 module.exports = router;

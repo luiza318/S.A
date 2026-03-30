@@ -40,5 +40,10 @@ async function commentUpdate(id, text) {
     );
 }
 
-module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId}
+async function deleteComment(id) {
+  await db.query("DELETE FROM comments WHERE id = ?",[id]
+  );
+}
+
+module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId, deleteComment}
 
