@@ -9,7 +9,7 @@ async function list() {
 
 async function findById(product_id) {
     const [rows] = await db.query(
-        "SELECT * FROM products WHERE product_id = ?",
+        "SELECT * FROM products WHERE id = ?",
         [product_id]
     );
     return rows[0];  // retorna só um produto

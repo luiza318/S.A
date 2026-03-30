@@ -24,6 +24,15 @@ async function listByUser(req, res, next) {
     } catch(e) { next (e)}
 }
 
+async function listByProduct(req, res, next) {
+    try{
+        const {productId} = req.params;
+        const comments = await repo.findByProductsId(productId);
+        res.json(comments);
+    } catch (e) {next (e)}
+}
+
+
 async function update(req, res, next) {
     try{
         const {id} = req.params
@@ -34,32 +43,5 @@ async function update(req, res, next) {
     }catch(e) {next (e)}
 }
 
-module.exports = {create, list, listByUser, update}
 
-
-
-/* listar comentarios
-exports.list = (req, res) => {
-    res.json(comments);
-};
-
-// deletar comentario
-exports.delete = (req, res) => {
-    const { id } = req.params;
-    comments = comments.filter(comment => comment.id != (id));
-    res.json({ message: "Comentario deletado com sucesso" });
-};
-
-// atualizar comentario
-exports.update = (req, res) => {
-    const { id } = req.params;
-    const { text } = req.body;
-
-    const comment = comments.find(comment => comment.id == (id));
-    if (!comment) {
-        return res.status(404).json({ message: "Comentario não encontrado" });
-    }
-
-    comment.text = text;
-    res.json(comment);
-}; */
+module.exports = {create, list, listByUser, update, listByProduct}

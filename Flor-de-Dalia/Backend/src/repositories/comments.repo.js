@@ -25,12 +25,20 @@ async function findByUserId(userId) {
     return rows;
 }
 
+async function findByProductsId(productId) {
+    const [rows] = await db.query(
+        "SELECT * FROM comments WHERE products_id = ? ORDER BY id DESC",
+        [productId]
+    );
+    return rows;
+}
+
 async function commentUpdate(id, text) {
     await db.query(
-        "UPDATE  comments SET text = ? WHERE  id = ?"
-    [id, text]
+        "UPDATE  comments SET text = ? WHERE  id = ?",
+    [text, id]
     );
 }
 
-module.exports = {createComments, findById, findAll, findByUserId, commentUpdate}
+module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId}
 

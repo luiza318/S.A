@@ -11,7 +11,7 @@ router.get("/", commentsController.list);
 
 router.get("/user/:userId", commentsController.listByUser);
 
-//router.get("/products/:productsId", commentsController.listByProduct)
+router.get("/products/:productId", commentsController.listByProduct)
 
 router.put("/:id", authRequired, validateComment, commentsController.update);
 
