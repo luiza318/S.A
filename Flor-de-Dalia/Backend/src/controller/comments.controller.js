@@ -19,8 +19,14 @@ async function create(req, res, next) {
 
 async function list(req, res, next) {
     try{
-        const comment = await repo.findAll();
-        res.json(comment)
+        const comments = await repo.findAll();
+
+        for (let comment of comments) {
+            const images = await repo.findImagesByComment(comment.id);
+            comment.images = images;
+        }
+
+        res.json(comments)
     } catch(e) { next (e); }
 }
 
@@ -28,6 +34,12 @@ async function listByUser(req, res, next) {
     try{
         const { userId } = req.params; 
         const comments = await repo.findByUserId(userId);
+
+        for (let comment of comments) {
+            const images = await repo.findImagesByComment(comment.id);
+            comment.images = images;
+        }
+
         res.json(comments);
     } catch(e) { next (e)}
 }
@@ -36,6 +48,12 @@ async function listByProduct(req, res, next) {
     try{
         const {productId} = req.params;
         const comments = await repo.findByProductsId(productId);
+
+        for (let comment of comments) {
+            const images = await repo.findImagesByComment(comment.id);
+            comment.images = images;
+        }
+
         res.json(comments);
     } catch (e) {next (e)}
 }
