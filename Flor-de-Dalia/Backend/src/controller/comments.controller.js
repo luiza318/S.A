@@ -10,7 +10,6 @@ async function create(req, res, next) {
                 const url = `/uploads/${file.filename}`;
                 await repo.insertImage(id,url);
             }
-            console.log(req.files);
         } 
 
         const comment = await repo.findById(id);
@@ -47,7 +46,18 @@ async function update(req, res, next) {
         const {id} = req.params
         const {text} = req.body;
         await repo.commentUpdate(id, text);
+        
+        if(req.files && req.files.length > 0){
+
+            await repo.deleteImages(id)
+
+            for ( let file of req.files){
+            const url = `/uploads/${file.filename}`;
+            await repo.insertImage(id,url);
+    }
+} 
         const comment = await repo.findById(id);
+
         res.json(comment)
     }catch(e) {next (e)}
 }

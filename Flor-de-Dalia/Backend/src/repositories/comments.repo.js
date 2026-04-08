@@ -51,10 +51,24 @@ async function commentUpdate(id, text) {
     );
 }
 
+async function updateImages(id, url) {
+    await db.query(
+        "UPDATE comment_images SET url = ? WHERE  id = ?",
+        [url, id]
+    );
+}
+
 async function deleteComment(id) {
   await db.query("DELETE FROM comments WHERE id = ?",[id]
   );
 }
 
-module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId, deleteComment, insertImage}
+async function deleteImages(comment_id) {
+    await db.query(
+        "DELETE FROM comment_images WHERE comment_id = ?",[comment_id]
+    );
+}
+
+module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId, deleteComment, insertImage,
+     updateImages, deleteImages}
 

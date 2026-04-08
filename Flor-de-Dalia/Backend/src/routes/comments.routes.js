@@ -11,7 +11,7 @@ router.post("/", authRequired,upload.array("images", 3), validateComment, commen
 router.get("/", commentsController.list);
 router.get("/user/:userId", commentsController.listByUser);
 router.get("/products/:productId", commentsController.listByProduct)
-router.put("/:id", authRequired, validateComment, commentsController.update);
+router.put("/:id", authRequired, upload.array("images", 3), validateComment, commentsController.update);
 router.delete("/:id", authRequired, commentsController.remove);
 
 module.exports = router;
