@@ -63,6 +63,14 @@ async function deleteComment(id) {
   );
 }
 
+async function findImagesByComment(comment_id) {
+    const [rows] = await db.query(
+        "SELECT url FROM comment_images WHERE comment_id = ?",
+        [comment_id]
+    );
+    return rows;
+}
+
 async function deleteImages(comment_id) {
     await db.query(
         "DELETE FROM comment_images WHERE comment_id = ?",[comment_id]
@@ -70,5 +78,5 @@ async function deleteImages(comment_id) {
 }
 
 module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId, deleteComment, insertImage,
-     updateImages, deleteImages}
+     updateImages, deleteImages, findImagesByComment}
 

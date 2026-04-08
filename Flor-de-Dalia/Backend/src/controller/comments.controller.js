@@ -65,8 +65,20 @@ async function update(req, res, next) {
 async function remove(req, res, next) {
     try{
         const {id} = req.params
+        const images = await repo.findImagesByComment(id) || [];
+
+        for( let img of images){
+            const filePath = path.join(__dirname, "..", img.url);
+
+            if (fs.existsSync(filePath)){
+                fs.unlinkSync(filePath);
+            }
+        }
+
+        await repo.deleteImages(id);
         await repo.deleteComment(id);
-        res.json({message:"Comentário Deletado com Sucesso"});
+
+        res.json({message:"Comentário e/ou imagens deletadas com Sucesso"});
     } catch (e) { next (e)}
 }
 
