@@ -1,13 +1,24 @@
 const db = require ("../config/db");
 
 async function findById(id) {
-    const [rows] = await db.query(" SELECT id, user_id, text, created_at FROM comments where id = ?", [id]);
+    const [rows] = await db.query(
+        " SELECT id, user_id, text, created_at FROM comments where id = ?",
+         [id]
+        );
     return rows [0];
 }
 
 async function createComments(user_id,text) {
-    const [result] = await db.query("INSERT INTO comments (user_id, text) VALUES (?, ?)", [user_id,text])
+    const [result] = await db.query("INSERT INTO comments (user_id, text) VALUES (?, ?)",
+         [user_id,text]
+        );
     return result.insertId
+}
+
+async function insertImage(comment_id, url) {
+    await db.query( "INSERT INTO comment_images (comment_id,url) VALUES (?,?)",
+        [comment_id, url]
+    );
 }
 
 async function findAll() {
@@ -45,5 +56,5 @@ async function deleteComment(id) {
   );
 }
 
-module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId, deleteComment}
+module.exports = {createComments, findById, findAll, findByUserId, commentUpdate, findByProductsId, deleteComment, insertImage}
 

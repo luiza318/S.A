@@ -4,6 +4,15 @@ async function create(req, res, next) {
     try{
         const {text} = req.body;
         const id = await repo.createComments(req.user.id, text);
+       
+        if(req.files && req.files.length > 0){
+            for ( let file of req.files){
+                const url = `/uploads/${file.filename}`;
+                await repo.insertImage(id,url);
+            }
+            console.log(req.files);
+        } 
+
         const comment = await repo.findById(id);
         res.status(201).json(comment);
     }catch(e) {next(e);}
