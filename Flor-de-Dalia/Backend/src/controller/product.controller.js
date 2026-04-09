@@ -9,15 +9,15 @@ async function list(req, res, next) {
 
 async function findById(req, res, next) {
     try {
-        const product_id = await repo.findById(req.params.id);
-        res.json (product_id);
+        const product = await repo.findById(req.params.id);
+        res.json (product);
     }catch (e) { next(e); }
 }
 
 async function listByCategory(req, res, next) {
     try {
-        const category_id = await repo.listByCategory(req.params.id);
-        res.json (category_id);
+        const products = await repo.listByCategory(req.params.id);
+        res.json (products);
     }catch (e) { next(e); }
 }
 
@@ -28,6 +28,11 @@ async function create(req, res, next) {
     }catch (e) { next(e); }
 }
 
-//terminar rotas de put, delete, create
+async function atualizacaoProduct(req, res, next) {
+    try{
+        const products = await repo.atualizacaoProduct();
+        res.json (products);
+    }catch (e) { next(e); }
+}
 
-module.exports = {list, findById, listByCategory, create};
+module.exports = {list, findById, listByCategory, create, atualizacaoProduct};
